@@ -35,7 +35,6 @@ require('lazy').setup({
       "hrsh7th/cmp-nvim-lsp",  -- LSP source
       "hrsh7th/cmp-buffer",     -- Buffer source
       "hrsh7th/cmp-path",       -- Path source
-      "hrsh7th/cmp-cmdline",    -- Command line source
       "saadparwaiz1/cmp_luasnip", -- Snippet source
       "L3MON4D3/LuaSnip",       -- Snippet engine
 		},
@@ -107,7 +106,6 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
-    { name = "cmdline" },
     { name = "luasnip" },
   },
 })
