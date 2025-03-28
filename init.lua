@@ -45,9 +45,13 @@ require('lazy').setup({
 		event = "VeryLazy",
 		priority = 10, -- Needs to be a really low priority, to catch others plugins keybindings.
 		opts = {
-				-- your configuration
 		},
 	},
+	{
+		 "m4xshen/hardtime.nvim",
+		 dependencies = { "MunifTanjim/nui.nvim" },
+		 opts = {}
+	}
 })
 
 require("conform").setup({
@@ -56,7 +60,7 @@ require("conform").setup({
 		c = { "clang-format" },
 	},
 	format_on_save = {
-		timeout_ms = 500,
+		timeout_ms = 1500,
 		lsp_format = "fallback",
 	},
 })
@@ -78,6 +82,9 @@ vim.cmd [[
 	set number
 	set tabstop=2
 	set shiftwidth=2
+
+	highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+	set cursorline
 ]]
 
 vim.cmd [[
