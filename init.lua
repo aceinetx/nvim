@@ -46,11 +46,6 @@ require('lazy').setup({
 		priority = 10, -- Needs to be a really low priority, to catch others plugins keybindings.
 		opts = {
 		},
-	},
-	{
-		 "m4xshen/hardtime.nvim",
-		 dependencies = { "MunifTanjim/nui.nvim" },
-		 opts = {}
 	}
 })
 
@@ -85,6 +80,10 @@ vim.cmd [[
 
 	highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 	set cursorline
+	nnoremap w k
+	nnoremap a h
+	nnoremap s j
+	nnoremap d l
 ]]
 
 vim.cmd [[
