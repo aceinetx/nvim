@@ -78,12 +78,13 @@ vim.cmd [[
 	set tabstop=2
 	set shiftwidth=2
 
+	map <Up> <Nop>
+	map <Left> <Nop>
+	map <Right> <Nop>
+	map <Down> <Nop>
+
 	highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 	set cursorline
-	nnoremap w k
-	nnoremap a h
-	nnoremap s j
-	nnoremap d l
 ]]
 
 vim.cmd [[
