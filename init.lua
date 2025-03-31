@@ -1,5 +1,7 @@
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/lazy")
-require'lspconfig'.clangd.setup{}
+local lspconfig = require('lspconfig')
+lspconfig.clangd.setup{}
+lspconfig.gopls.setup{}
 
 require('lazy').setup({
 	{ "thimc/gruber-darker.nvim", config = function()
