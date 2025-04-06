@@ -2,6 +2,16 @@ vim.opt.runtimepath:prepend("~/.config/nvim/lua/lazy")
 local lspconfig = require('lspconfig')
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
+lspconfig.omnisharp.setup{
+	cmd = { "dotnet", "/usr/lib/omnisharp-roslyn/OmniSharp.dll" },
+}
+
+vim.cmd [[
+	let g:OmniSharp_server_path = '/usr/bin/OmniSharp'
+	call plug#begin()
+	Plug 'OmniSharp/omnisharp-vim'
+	call plug#end()
+]]
 
 require('lazy').setup({
 	{ "thimc/gruber-darker.nvim", config = function()
@@ -34,11 +44,11 @@ require('lazy').setup({
 		version = false, -- last release is way too old
 		event = "InsertEnter",
 		dependencies = {
-      "hrsh7th/cmp-nvim-lsp",  -- LSP source
-      "hrsh7th/cmp-buffer",     -- Buffer source
-      "hrsh7th/cmp-path",       -- Path source
-      "saadparwaiz1/cmp_luasnip", -- Snippet source
-      "L3MON4D3/LuaSnip",       -- Snippet engine
+			"hrsh7th/cmp-nvim-lsp",	-- LSP source
+			"hrsh7th/cmp-buffer",		 -- Buffer source
+			"hrsh7th/cmp-path",			 -- Path source
+			"saadparwaiz1/cmp_luasnip", -- Snippet source
+			"L3MON4D3/LuaSnip",			 -- Snippet engine
 		},
 		opts = {}
 	},
@@ -99,22 +109,22 @@ vim.cmd [[
 local cmp = require("cmp")
 
 cmp.setup({
-  snippet = {
-    expand = function(args)
-      require("luasnip").lsp_expand(args.body) -- For luasnip users.
-    end,
-  },
-  mapping = {
-    ["<C-n>"] = cmp.mapping.select_next_item(), -- Down
-    ["<C-p>"] = cmp.mapping.select_prev_item(), -- Up
-    ["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
-    ["<C-e>"] = cmp.mapping.close(), -- Close completion
-    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
-  },
-  sources = {
-    { name = "nvim_lsp" },
-    { name = "buffer" },
-    { name = "path" },
-    { name = "luasnip" },
-  },
+	snippet = {
+		expand = function(args)
+			require("luasnip").lsp_expand(args.body) -- For luasnip users.
+		end,
+	},
+	mapping = {
+		["<C-n>"] = cmp.mapping.select_next_item(), -- Down
+		["<C-p>"] = cmp.mapping.select_prev_item(), -- Up
+		["<C-Space>"] = cmp.mapping.complete(), -- Trigger completion
+		["<C-e>"] = cmp.mapping.close(), -- Close completion
+		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
+	},
+	sources = {
+		{ name = "nvim_lsp" },
+		{ name = "buffer" },
+		{ name = "path" },
+		{ name = "luasnip" },
+	},
 })
