@@ -11,6 +11,8 @@ vim.cmd [[
 	call plug#begin()
 	Plug 'OmniSharp/omnisharp-vim'
 	call plug#end()
+
+	set relativenumber
 ]]
 
 require('lazy').setup({
