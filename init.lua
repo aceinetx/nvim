@@ -12,17 +12,18 @@ vim.cmd [[
 	Plug 'OmniSharp/omnisharp-vim'
 	call plug#end()
 
+	call plug#begin('~/.local/share/nvim/plugged')
+	Plug 'morhetz/gruvbox'
+	call plug#end()
+
 	set relativenumber
 ]]
 
+vim.o.background = 'dark'
+vim.g.gruvbox_contrast_dark = 'soft'
+vim.cmd('colorscheme gruvbox')
+
 require('lazy').setup({
-	{ "thimc/gruber-darker.nvim", config = function()
-		require('gruber-darker').setup({
-			transparent = true,
-			underline = false,
-		}) 
-		vim.cmd.colorscheme('gruber-darker')
-	end,},
 	{
 			"nvim-telescope/telescope-file-browser.nvim",
 			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
