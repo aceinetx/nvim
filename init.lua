@@ -3,7 +3,6 @@ arrow_keys = false -- I usually enable this when i'm in termux, i wouldn't recom
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/lazy")
 
 local lspconfig = require('lspconfig')
-local cmp = require("cmp")
 
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
@@ -79,6 +78,8 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 })
+
+local cmp = require("cmp")
 
 vim.keymap.set("n", "<space>f", ":Telescope file_browser<CR>")
 
