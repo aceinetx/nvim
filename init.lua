@@ -1,7 +1,10 @@
 arrow_keys = false -- I usually enable this when i'm in termux, i wouldn't recommend you enabling it tho
 
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/lazy")
+
 local lspconfig = require('lspconfig')
+local cmp = require("cmp")
+
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
 lspconfig.omnisharp.setup{
@@ -105,8 +108,6 @@ vim.cmd [[
 		autocmd FileType python setlocal noexpandtab tabstop=2 shiftwidth=2
 	augroup END
 ]]
-
-local cmp = require("cmp")
 
 cmp.setup({
 	snippet = {
