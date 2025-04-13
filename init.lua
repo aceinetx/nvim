@@ -1,8 +1,10 @@
 arrow_keys = false -- I usually enable this when i'm in termux, i wouldn't recommend you enabling it tho
 
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/lazy")
+vim.opt.runtimepath:prepend("~/.config/nvim/lua/")
 
 local lspconfig = require('lspconfig')
+require("macros")
 
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
