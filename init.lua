@@ -70,6 +70,7 @@ require('lazy').setup({
 	}
 })
 
+--[[
 require("conform").setup({
 	formatters_by_ft = {
 		cpp = { "clang-format" },
@@ -80,6 +81,7 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 })
+--]]
 
 local cmp = require("cmp")
 
