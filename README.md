@@ -13,6 +13,8 @@ git clone https://github.com/aceinetx/nvim ~/.config/nvim --recursive
 - Yank animations (tiny-glimmer.nvim)
 - 2 width indentation with tabs
 - Completely disabled arrow keys
+- Integrated terminal (toggleterm.nvim)
+- Tree view of a project (nvim-tree)
 ## Supported languages' LSP's
 - C/CXX
 - C#
