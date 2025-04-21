@@ -31,10 +31,6 @@ vim.cmd('colorscheme gruvbox')
 
 require('lazy').setup({
 	{
-			"nvim-telescope/telescope-file-browser.nvim",
-			dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
-	},
-	{
 		'MeanderingProgrammer/render-markdown.nvim',
 		dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
 		opts = {},
@@ -67,10 +63,35 @@ require('lazy').setup({
 		priority = 10, -- Needs to be a really low priority, to catch others plugins keybindings.
 		opts = {
 		},
+	},
+	{
+		{'akinsho/toggleterm.nvim', version = "*", 
+			opts = {
+				open_mapping = [[<A-t>]],
+				direction = 'horizontal',
+			}
+		}
+	},
+	{
+		"nvim-tree/nvim-tree.lua",
+		version = "*",
+		lazy = false,
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		config = function()
+			require("nvim-tree").setup {}
+			vim.api.nvim_set_keymap('n', '<A-f>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
+
+		end,
+	},
+	{
+		'akinsho/bufferline.nvim', 
+		version = "*", 
+		dependencies = 'nvim-tree/nvim-web-devicons'
 	}
 })
 
---[[
 require("conform").setup({
 	formatters_by_ft = {
 		cpp = { "clang-format" },
@@ -81,7 +102,6 @@ require("conform").setup({
 		lsp_format = "fallback",
 	},
 })
---]]
 
 local cmp = require("cmp")
 
