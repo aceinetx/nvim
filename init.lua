@@ -80,30 +80,42 @@ require('lazy').setup({
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
+			local api = require("nvim-tree.api")
+
 			require("nvim-tree").setup {
+				view = {
+					width = 30, -- Set a fixed width for the tree
+					side = "left", -- Always show on the left side
+					preserve_window_proportions = true,
+				},
 				actions = {
 					open_file = {
-						quit_on_open = false,
+						quit_on_open = true,
 						window_picker = {
 							enable = false,
 						},
 					},
 				},
 				on_attach = function(bufnr)
-					local api = require('nvim-tree.api')
 					local function opts(desc)
 						return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
 					end
 					
-					-- Default mappings not included here
+					-- Default mappings
 					api.config.mappings.default_on_attach(bufnr)
 					
 					-- Open files in new tabs
-					vim.keymap.set('n', '<CR>', api.node.open.tab_drop, opts('Open: New Tab'))
-					vim.keymap.set('n', 'o', api.node.open.tab_drop, opts('Open: New Tab'))
-					vim.keymap.set('n', '<2-LeftMouse>', api.node.open.tab_drop, opts('Open: New Tab'))
+					local function open_in_tab()
+						api.node.open.tab_drop()
+					end
+					
+					vim.keymap.set('n', '<CR>', open_in_tab, opts('Open: New Tab'))
+					vim.keymap.set('n', 'o', open_in_tab, opts('Open: New Tab'))
+					vim.keymap.set('n', '<2-LeftMouse>', open_in_tab, opts('Open: New Tab'))
 				end,
 			}
+
+			-- Toggle with Alt+F
 			vim.api.nvim_set_keymap('n', '<A-f>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
 		end,
 	},
