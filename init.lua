@@ -80,9 +80,31 @@ require('lazy').setup({
 			"nvim-tree/nvim-web-devicons",
 		},
 		config = function()
-			require("nvim-tree").setup {}
+			require("nvim-tree").setup {
+				actions = {
+					open_file = {
+						quit_on_open = false,
+						window_picker = {
+							enable = false,
+						},
+					},
+				},
+				on_attach = function(bufnr)
+					local api = require('nvim-tree.api')
+					local function opts(desc)
+						return { desc = 'nvim-tree: ' .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+					end
+					
+					-- Default mappings not included here
+					api.config.mappings.default_on_attach(bufnr)
+					
+					-- Open files in new tabs
+					vim.keymap.set('n', '<CR>', api.node.open.tab_drop, opts('Open: New Tab'))
+					vim.keymap.set('n', 'o', api.node.open.tab_drop, opts('Open: New Tab'))
+					vim.keymap.set('n', '<2-LeftMouse>', api.node.open.tab_drop, opts('Open: New Tab'))
+				end,
+			}
 			vim.api.nvim_set_keymap('n', '<A-f>', ':NvimTreeToggle<CR>', {noremap = true, silent = true})
-
 		end,
 	},
 	{
@@ -91,6 +113,11 @@ require('lazy').setup({
 		dependencies = 'nvim-tree/nvim-web-devicons'
 	}
 })
+
+-- Add tab navigation keybindings
+vim.api.nvim_set_keymap('n', '<A-a>', ':tabprevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-d>', ':tabnext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-z>', ':tabclose<CR>', {noremap = true, silent = true})
 
 require("conform").setup({
 	formatters_by_ft = {
