@@ -8,6 +8,7 @@ require("macros")
 
 lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
+lspconfig.rust_analyzer.setup{}
 lspconfig.omnisharp.setup{
 	cmd = { "dotnet", "/usr/lib/omnisharp-roslyn/OmniSharp.dll" },
 }
@@ -16,9 +17,7 @@ vim.cmd [[
 	let g:OmniSharp_server_path = '/usr/bin/OmniSharp'
 	call plug#begin()
 	Plug 'OmniSharp/omnisharp-vim'
-	call plug#end()
-
-	call plug#begin('~/.local/share/nvim/plugged')
+	Plug 'andweeb/presence.nvim'
 	Plug 'morhetz/gruvbox'
 	call plug#end()
 
@@ -83,6 +82,13 @@ require('lazy').setup({
 			local api = require("nvim-tree.api")
 
 			require("nvim-tree").setup {
+				filters = {
+					dotfiles = false,	-- show hidden files/folders; adjust as needed
+					custom = {},			 -- add any custom filter strings here
+				},
+				git = {
+					ignore = false,		-- display files/folders even if they're in .gitignore
+				},
 				view = {
 					width = 30, -- Set a fixed width for the tree
 					side = "left", -- Always show on the left side
@@ -126,7 +132,7 @@ require('lazy').setup({
 	}
 })
 
--- Add tab navigation keybindings
+-- Tab navigation keybindings
 vim.api.nvim_set_keymap('n', '<A-a>', ':tabprevious<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-d>', ':tabnext<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<A-z>', ':tabclose<CR>', {noremap = true, silent = true})
@@ -143,14 +149,6 @@ require("conform").setup({
 })
 
 local cmp = require("cmp")
-
-vim.keymap.set("n", "<space>f", ":Telescope file_browser<CR>")
-
-vim.keymap.set("n", "<space>f", ":Telescope file_browser path=%:p:h select_buffer=true<CR>")
-
-vim.keymap.set("n", "<space>f", function()
-	require("telescope").extensions.file_browser.file_browser()
-end)
 
 vim.cmd [[
 	syntax enable
@@ -176,7 +174,7 @@ vim.cmd [[
 cmp.setup({
 	snippet = {
 		expand = function(args)
-			require("luasnip").lsp_expand(args.body) -- For luasnip users.
+			require("luasnip").lsp_expand(args.body)
 		end,
 	},
 	mapping = {
