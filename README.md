@@ -4,7 +4,6 @@
 git clone https://github.com/aceinetx/nvim ~/.config/nvim --recursive
 ```
 ## Features
-- A gruvbox dark soft theme 
 - Telescope file browser (telescope-file-browser.nvim)
 - Markdown renderer (render-markdown.nvim)
 - A formatter for CXX (conform.nvim)
@@ -19,3 +18,4 @@ git clone https://github.com/aceinetx/nvim ~/.config/nvim --recursive
 - C/CXX
 - C#
 - Golang
+- Rust
