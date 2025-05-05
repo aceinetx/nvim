@@ -3,7 +3,7 @@ vim.opt.runtimepath:prepend("~/.config/nvim/lua/")
 
 require("macros")
 require("keys")
-require("lsp")
+require("lsp_cfg")
 require("plug")
 require("presence_cfg")
 require("colorizer_cfg")
