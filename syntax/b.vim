@@ -1,6 +1,6 @@
 " Basic syntax highlighting for Ken Thompson's B language
 syntax clear
-syntax keyword bKeyword extrn auto while if else return
+syntax keyword bKeyword extrn auto while break if else return
 syntax keyword bConst stdout stdin
 syntax keyword bOperator = - + ( ) { } ; ,
 syntax match bString /".*"/
