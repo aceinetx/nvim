@@ -1,5 +1,7 @@
 arrow_keys = false -- I usually enable this when i'm in termux, i wouldn't recommend you enabling it tho
 
+vim.g.mapleader = " "
+
 if not arrow_keys then
 	vim.api.nvim_set_keymap('n', '<Up>', '<Nop>', {noremap = true, silent = true})
 	vim.api.nvim_set_keymap('n', '<Down>', '<Nop>', {noremap = true, silent = true})
