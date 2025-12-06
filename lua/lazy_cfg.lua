@@ -79,6 +79,8 @@ require('lazy').setup({
 					
 					-- Default mappings
 					api.config.mappings.default_on_attach(bufnr)
+
+					--[[
 					
 					-- Open files in new tabs
 					local function open_in_tab()
@@ -88,6 +90,8 @@ require('lazy').setup({
 					vim.keymap.set('n', '<CR>', open_in_tab, opts('Open: New Tab'))
 					vim.keymap.set('n', 'o', open_in_tab, opts('Open: New Tab'))
 					vim.keymap.set('n', '<2-LeftMouse>', open_in_tab, opts('Open: New Tab'))
+
+					--]]
 				end,
 			}
 
@@ -96,12 +100,21 @@ require('lazy').setup({
 		end,
 	},
 	{
-		'akinsho/bufferline.nvim', 
-		version = "*", 
-		dependencies = 'nvim-tree/nvim-web-devicons'
-	},
-	{
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
-	}
+	},
+	{'romgrk/barbar.nvim',
+		dependencies = {
+			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+		},
+		init = function() vim.g.barbar_auto_setup = false end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+	},
 })

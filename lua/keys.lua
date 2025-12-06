@@ -17,12 +17,24 @@ if not arrow_keys then
 	vim.api.nvim_set_keymap('i', '<Right>', '<Nop>', {noremap = true, silent = true})
 end
 
-vim.api.nvim_set_keymap('n', '<A-a>', ':tabprevious<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<A-d>', ':tabnext<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<A-z>', ':tabclose<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<A-a>', ':tabprevious<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<A-d>', ':tabnext<CR>', {noremap = true, silent = true})
+-- vim.api.nvim_set_keymap('n', '<A-z>', ':tabclose<CR>', {noremap = true, silent = true})
 
 if vim.g.neovide == true then
 	vim.api.nvim_set_keymap("n", "<C-+>", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>", { silent = true })
 	vim.api.nvim_set_keymap("n", "<C-->", ":lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>", { silent = true })
 	vim.api.nvim_set_keymap("n", "<C-0>", ":lua vim.g.neovide_scale_factor = 1<CR>", { silent = true })
 end
+
+vim.keymap.set('n', '<leader>ca', function()
+	vim.cmd("lua vim.lsp.buf.code_action()")
+end, {})
+
+vim.keymap.set('n', '<leader>rn', function()
+	vim.cmd("lua vim.lsp.buf.rename()")
+end, {})
+
+vim.api.nvim_set_keymap('n', '<A-z>', ':bd<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-a>', ':bprev<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-d>', ':bnext<CR>', {noremap = true, silent = true})
