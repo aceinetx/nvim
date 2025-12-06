@@ -8,5 +8,6 @@ vim.cmd [[
 
 	set relativenumber
 	set termguicolors
-]]
 
+	colorscheme minisummer
+]]
