@@ -1,6 +1,8 @@
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/lazy")
 vim.opt.runtimepath:prepend("~/.config/nvim/lua/")
 
+vim.g.mapleader = ' '
+
 require("macros")
 require("keys")
 require("lsp_cfg")

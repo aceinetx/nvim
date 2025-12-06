@@ -10,3 +10,10 @@ vim.diagnostic.enable = true
 vim.diagnostic.config({
 	virtual_lines = true,
 })
+
+vim.keymap.set('n', '<leader>ca', function()
+	vim.cmd("lua vim.lsp.buf.code_action()")
+end, {})
+vim.keymap.set('n', '<leader>rn', function()
+	vim.cmd("lua vim.lsp.buf.rename()")
+end, {})
