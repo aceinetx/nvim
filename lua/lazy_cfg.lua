@@ -112,7 +112,7 @@ require('lazy').setup({
 		opts = {
 			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
 			-- animation = true,
-			insert_at_end = true,
+			-- insert_at_end = true,
 			-- …etc.
 		},
 		version = '^1.0.0', -- optional: only update when a new 1.x version is released
