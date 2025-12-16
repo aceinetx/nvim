@@ -122,5 +122,30 @@ require('lazy').setup({
 		 lazy = false,
 		 dependencies = { "MunifTanjim/nui.nvim" },
 		 opts = {},
+	},
+	{
+		"ThePrimeagen/refactoring.nvim",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-treesitter/nvim-treesitter",
+		},
+		lazy = false,
+		opts = {
+			prompt_func_return_type = {
+				cpp = true,
+				c = true,
+			},
+			prompt_func_param_type = {
+				cpp = true,
+				c = true,
+			}
+		},
+	},
+	{
+		"ray-x/lsp_signature.nvim",
+		event = "InsertEnter",
+		opts = {
+			-- cfg options
+		},
 	}
 })

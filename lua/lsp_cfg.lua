@@ -4,7 +4,7 @@ lspconfig.clangd.setup{}
 lspconfig.gopls.setup{}
 lspconfig.rust_analyzer.setup{}
 lspconfig.omnisharp.setup{
-	cmd = { "dotnet", "/usr/lib/omnisharp-roslyn/OmniSharp.dll" },
+	cmd = { "omnisharp" },
 }
 vim.diagnostic.enable = true
 vim.diagnostic.config({
