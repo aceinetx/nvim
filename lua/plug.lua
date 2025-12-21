@@ -4,6 +4,7 @@ vim.cmd [[
 	Plug 'OmniSharp/omnisharp-vim'
 	Plug 'andweeb/presence.nvim'
 	Plug 'loctvl842/monokai-pro.nvim'
+	Plug 'Mofiqul/vscode.nvim'
 	call plug#end()
 
 	set relativenumber

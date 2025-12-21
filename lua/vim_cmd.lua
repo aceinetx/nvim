@@ -15,4 +15,6 @@ vim.cmd [[
 		autocmd!
 		autocmd FileType python setlocal noexpandtab tabstop=2 shiftwidth=2
 	augroup END
+
+	colorscheme vscode
 ]]
