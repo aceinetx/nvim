@@ -42,3 +42,4 @@ vim.api.nvim_set_keymap('n', '<A-a>', ':BufferPrevious<CR>', {noremap = true, si
 vim.api.nvim_set_keymap('n', '<A-d>', ':BufferNext<CR>', {noremap = true, silent = true})
 
 vim.keymap.set('n', 'dwi', '<Nop>', { noremap = true, silent = true })
+vim.keymap.set('n', '2yy', '<Nop>', { noremap = true, silent = true })
