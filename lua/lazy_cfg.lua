@@ -147,5 +147,22 @@ require('lazy').setup({
 		opts = {
 			-- cfg options
 		},
+	},
+	{
+		"Mythos-404/xmake.nvim",
+		version = "^3",
+		lazy = true,
+		event = "BufReadPost",
+		config = true,
+	},
+	{
+		"nickkadutskyi/jb.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {},
+		config = function()
+		-- require("jb").setup({transparent = true})
+		vim.cmd("colorscheme jb")
+		end,
 	}
 })

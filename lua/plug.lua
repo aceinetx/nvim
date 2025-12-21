@@ -61,5 +61,3 @@ require("monokai-pro").setup({
   ---@param hp Helper
   override = function(cs, p, Config, hp) end,
 })
-
-vim.cmd [[ colorscheme monokai-pro ]]
