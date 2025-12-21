@@ -118,10 +118,12 @@ require('lazy').setup({
 		version = '^1.0.0', -- optional: only update when a new 1.x version is released
 	},
 	{
-		 "m4xshen/hardtime.nvim",
-		 lazy = false,
-		 dependencies = { "MunifTanjim/nui.nvim" },
-		 opts = {},
+		"m4xshen/hardtime.nvim",
+		lazy = false,
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {
+			disable_keys_time = 3000,  -- Disable keys for 3 seconds
+		},
 	},
 	{
 		"ThePrimeagen/refactoring.nvim",
