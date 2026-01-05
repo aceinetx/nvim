@@ -61,7 +61,7 @@ require('lazy').setup({
 				},
 				view = {
 					width = 30, -- Set a fixed width for the tree
-					side = "left", -- Always show on the left side
+					side = "right", 					
 					preserve_window_proportions = true,
 				},
 				actions = {
