@@ -122,7 +122,7 @@ require('lazy').setup({
 		lazy = false,
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {
-			disable_keys_time = 3000,  -- Disable keys for 3 seconds
+			disable_keys_time = 3000,	-- Disable keys for 3 seconds
 		},
 	},
 	{
