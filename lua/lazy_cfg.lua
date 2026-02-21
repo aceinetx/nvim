@@ -166,5 +166,33 @@ require('lazy').setup({
 		-- require("jb").setup({transparent = true})
 		vim.cmd("colorscheme jb")
 		end,
+	},
+	{
+		'nvim-flutter/flutter-tools.nvim',
+		lazy = false,
+		dependencies = {
+				'nvim-lua/plenary.nvim',
+		},
+		config = true,
+	},
+	{
+		"folke/snacks.nvim",
+		opts = {
+			input = {
+			},
+			notifier = {
+			},
+			indent = {
+			},
+			dim = {
+			}
+		}
+	},
+	{
+    'skardyy/neo-img',
+    build = ":NeoImg Install",
+    config = function()
+        require('neo-img').setup()
+    end
 	}
 })
