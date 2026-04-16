@@ -1,19 +1,20 @@
-local lspconfig = require('lspconfig')
+vim.lsp.enable('clangd')
 
-lspconfig.clangd.setup{}
-lspconfig.gopls.setup{}
-lspconfig.ts_ls.setup{}
-lspconfig.rust_analyzer.setup{}
-lspconfig.omnisharp.setup{
-	cmd = { "omnisharp" },
-}
+vim.lsp.enable('gopls')
+
+vim.lsp.enable('ts_ls')
+
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.config('gdscript', {
+	name = 'godot',
+	cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
+})
+vim.lsp.enable('gdscript')
+
+vim.lsp.enable('zls')
+
 vim.diagnostic.enable = true
 vim.diagnostic.config({
 	virtual_lines = true,
 })
-
-lspconfig.gdscript.setup {
-	name = 'godot',
-	cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
-}
-lspconfig.zls.setup {}
