@@ -14,6 +14,8 @@ vim.lsp.enable('gdscript')
 
 vim.lsp.enable('zls')
 
+vim.lsp.enable('pyright')
+
 vim.diagnostic.enable = true
 vim.diagnostic.config({
 	virtual_lines = true,
