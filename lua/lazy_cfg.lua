@@ -80,6 +80,9 @@ require('lazy').setup({
 					side = "right", 					
 					preserve_window_proportions = true,
 				},
+				renderer = {
+					group_empty = true
+				},
 				actions = {
 					open_file = {
 						quit_on_open = true,
@@ -216,4 +219,24 @@ require('lazy').setup({
 		opts = {
 		}
 	},
+	{
+		"williamboman/mason.nvim",
+		config = function()
+		require("mason").setup()
+		end,
+	},
+
+	{
+		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			"williamboman/mason.nvim",
+		},
+		config = function()
+			require("mason-lspconfig").setup({
+			ensure_installed = {
+			"kotlin_language_server",
+			},
+		})
+		end,
+	}
 })
