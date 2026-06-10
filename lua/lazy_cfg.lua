@@ -25,11 +25,6 @@ require('lazy').setup({
 		opts = {},
 	},
 	{
-		'numToStr/Comment.nvim',
-		opts = {
-		}
-	},
-	{
 		"hrsh7th/nvim-cmp",
 		version = false, -- last release is way too old
 		event = "InsertEnter",
@@ -69,16 +64,16 @@ require('lazy').setup({
 
 			require("nvim-tree").setup {
 				filters = {
-					dotfiles = false,	-- show hidden files/folders; adjust as needed
-					custom = {},			 -- add any custom filter strings here
+					dotfiles = false,
+					custom = {},
 				},
 				git = {
-					ignore = false,		-- display files/folders even if they're in .gitignore
+					ignore = false,
 				},
 				view = {
-					width = 30, -- Set a fixed width for the tree
+					-- width = 30, -- Set a fixed width for the tree
 					side = "right", 					
-					preserve_window_proportions = true,
+					-- preserve_window_proportions = true,
 				},
 				renderer = {
 					group_empty = true
@@ -98,19 +93,6 @@ require('lazy').setup({
 					
 					-- Default mappings
 					api.config.mappings.default_on_attach(bufnr)
-
-					--[[
-					
-					-- Open files in new tabs
-					local function open_in_tab()
-						api.node.open.tab_drop()
-					end
-					
-					vim.keymap.set('n', '<CR>', open_in_tab, opts('Open: New Tab'))
-					vim.keymap.set('n', 'o', open_in_tab, opts('Open: New Tab'))
-					vim.keymap.set('n', '<2-LeftMouse>', open_in_tab, opts('Open: New Tab'))
-
-					--]]
 				end,
 			}
 
@@ -122,7 +104,8 @@ require('lazy').setup({
 		'nvim-lualine/lualine.nvim',
 		dependencies = { 'nvim-tree/nvim-web-devicons' }
 	},
-	{'romgrk/barbar.nvim',
+	{
+		'romgrk/barbar.nvim',
 		dependencies = {
 			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
 			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
@@ -145,24 +128,6 @@ require('lazy').setup({
 		},
 	},
 	{
-		"ThePrimeagen/refactoring.nvim",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-		lazy = false,
-		opts = {
-			prompt_func_return_type = {
-				cpp = true,
-				c = true,
-			},
-			prompt_func_param_type = {
-				cpp = true,
-				c = true,
-			}
-		},
-	},
-	{
 		"ray-x/lsp_signature.nvim",
 		event = "InsertEnter",
 		opts = {
@@ -170,53 +135,19 @@ require('lazy').setup({
 		},
 	},
 	{
-		"Mythos-404/xmake.nvim",
-		version = "^3",
-		lazy = true,
-		event = "BufReadPost",
-		config = true,
-	},
-	{
-		"nickkadutskyi/jb.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function()
-		-- require("jb").setup({transparent = true})
-		vim.cmd("colorscheme jb")
-		end,
-	},
-	{
 		'nvim-flutter/flutter-tools.nvim',
 		lazy = false,
 		dependencies = {
-				'nvim-lua/plenary.nvim',
+			'nvim-lua/plenary.nvim',
 		},
 		config = true,
 	},
 	{
 		"folke/snacks.nvim",
 		opts = {
-			input = {
-			},
-			notifier = {
-			},
-			indent = {
-			},
-			dim = {
-			}
-		}
-	},
-	{
-		'skardyy/neo-img',
-		build = ":NeoImg Install",
-		config = function()
-			require('neo-img').setup()
-		end
-	},
-	{
-		"norcalli/nvim-colorizer.lua",
-		opts = {
+			input = {},
+			notifier = {},
+			indent = {},
 		}
 	},
 	{
@@ -225,7 +156,6 @@ require('lazy').setup({
 		require("mason").setup()
 		end,
 	},
-
 	{
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = {
