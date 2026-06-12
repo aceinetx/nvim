@@ -47,7 +47,6 @@ require('lazy').setup({
 	{
 		{'akinsho/toggleterm.nvim', version = "*", 
 			opts = {
-				shell = "tmux",
 				open_mapping = [[<A-t>]],
 				direction = 'horizontal',
 			}
