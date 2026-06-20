@@ -16,8 +16,6 @@ vim.lsp.enable('zls')
 
 vim.lsp.enable('pyright')
 
-vim.lsp.enable('kotlin_language_server')
-
 vim.lsp.enable('jdtls')
 
 vim.diagnostic.enable = true
