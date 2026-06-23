@@ -14,9 +14,13 @@ vim.lsp.enable('gdscript')
 
 vim.lsp.enable('zls')
 
-vim.lsp.enable('pyright')
-
 vim.lsp.enable('jdtls')
+
+vim.lsp.enable('nil')
+
+vim.lsp.enable('pyrefly')
+
+vim.lsp.enable('hls')
 
 vim.diagnostic.enable = true
 vim.diagnostic.config({

@@ -142,5 +142,8 @@ require('lazy').setup({
 			notifier = {},
 			indent = {},
 		}
+	},
+	{ 
+		"blazkowolf/gruber-darker.nvim" 
 	}
 })

@@ -16,5 +16,5 @@ vim.cmd [[
 		autocmd FileType python setlocal noexpandtab tabstop=2 shiftwidth=2
 	augroup END
 
-	colorscheme vscode
+	colorscheme gruber-darker
 ]]
