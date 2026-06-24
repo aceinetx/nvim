@@ -16,11 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	{
-		'MeanderingProgrammer/render-markdown.nvim',
-		dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' },
-		opts = {},
-	},
-	{
 		'stevearc/conform.nvim',
 		opts = {},
 	},
