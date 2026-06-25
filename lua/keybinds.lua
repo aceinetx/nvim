@@ -1,0 +1,6 @@
+vim.api.nvim_set_keymap('n', '<A-z>', ':BufferClose!<CR>',   {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-a>', ':BufferPrevious<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-d>', ':BufferNext<CR>',     {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-q>', ':BufferMovePrev<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-e>', ':BufferMoveNext<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<A-g>', ':terminal<CR>',       {noremap = true, silent = true})
