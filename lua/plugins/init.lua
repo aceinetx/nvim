@@ -57,5 +57,9 @@ return {
 	},
 	{
 		"alvgaona/dired.nvim"
+	},
+	{
+		'stevearc/conform.nvim',
+		opts = {},
 	}
 }
