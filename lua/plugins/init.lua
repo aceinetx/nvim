@@ -61,5 +61,12 @@ return {
 	{
 		'stevearc/conform.nvim',
 		opts = {},
+	},
+	{
+		'nvim-telescope/telescope.nvim', version = '*',
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'nix-shell -p gnumake --run "make"' },
+		}
 	}
 }
