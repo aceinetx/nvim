@@ -24,7 +24,7 @@ return {
 		version = '^1.0.0',
 	},
 	{
-		"m4xshen/hardtime.nvim",
+		"aceinetx/hardtime.nvim",
 		lazy = false,
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {
