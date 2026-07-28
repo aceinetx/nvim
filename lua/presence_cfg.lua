@@ -1,0 +1,12 @@
+require("presence"):setup({
+	auto_update = true,
+	neovim_image_text = "<3",
+	main_image = "neovim",
+	editing_text = "editing %s",
+	git_commit_text = "doing git commit",
+	plugin_manager_text = "managing plugins",
+	reading_text = "reading %s",
+	workspace_text = "__builtin_trap()",
+	line_number_text = "line %s",
+	file_explorer_text = "browsing %s",
+})

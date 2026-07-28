@@ -68,5 +68,8 @@ return {
 			'nvim-lua/plenary.nvim',
 			{ 'nvim-telescope/telescope-fzf-native.nvim', build = 'nix-shell -p gnumake --run "make"' },
 		}
+	},
+	{
+		'andweeb/presence.nvim'
 	}
 }
