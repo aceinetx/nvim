@@ -1,3 +1,3 @@
 vim.cmd [[
-	colorscheme gruber-darker
+	colorscheme naysayer
 ]]

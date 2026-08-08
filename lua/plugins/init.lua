@@ -71,5 +71,8 @@ return {
 	},
 	{
 		'andweeb/presence.nvim'
+	},
+	{
+		'RostislavArts/naysayer.nvim'
 	}
 }
