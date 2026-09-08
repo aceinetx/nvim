@@ -1,3 +1,5 @@
+vim.lsp.enable('ts_ls')
+
 vim.lsp.enable('clangd')
 
 vim.lsp.enable('pyrefly')
@@ -13,6 +15,36 @@ vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('blangd')
 
 vim.lsp.enable('zls')
+
+vim.lsp.enable('vue_ls')
+
+vim.lsp.config("jdtls", {
+	settings = {
+		java = {
+			import = {
+				gradle = {
+					enabled = true,
+					offline = {
+						enabled = false,
+					},
+					wrapper = {
+						enabled = true,
+					},
+				},
+			},
+
+			configuration = {
+				updateBuildConfiguration = "automatic",
+			},
+
+			project = {
+				referencedLibraries = {},
+			},
+		},
+	},
+})
+
+vim.lsp.enable("jdtls")
 
 vim.diagnostic.enable = true
 vim.diagnostic.config({

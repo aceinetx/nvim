@@ -74,5 +74,25 @@ return {
 	},
 	{
 		'RostislavArts/naysayer.nvim'
+	},
+	{
+		'Mathijs-Bakker/godotdev.nvim',
+		dependencies = {
+			'mfussenegger/nvim-dap', 
+			'rcarriga/nvim-dap-ui',
+			'nvim-treesitter/nvim-treesitter',
+		},
+	},
+	{
+		'mfussenegger/nvim-jdtls'
+	},
+	{
+		'nvim-flutter/flutter-tools.nvim',
+		lazy = false,
+		dependencies = {
+			'nvim-lua/plenary.nvim',
+			'stevearc/dressing.nvim', -- optional for vim.ui.select
+		},
+		config = true,
 	}
 }
