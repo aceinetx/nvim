@@ -18,6 +18,7 @@ vim.cmd [[
 	hi IncSearch cterm=reverse ctermfg=NONE gui=reverse guifg=NONE term=reverse
 	hi PreProc guifg=#b4be82
 	hi Question guifg=#b4be82
+	hi Identifier guifg=white
 	hi Special guifg=white
 	hi SpecialKey guifg=#515e97
 	hi Statement gui=bold guifg=#cccccc
