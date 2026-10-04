@@ -16,6 +16,8 @@ vim.lsp.enable('blangd')
 
 vim.lsp.enable('zls')
 
+vim.lsp.config('vtsls', vim.lsp.config["vtsls"])
+
 vim.lsp.enable('vue_ls')
 
 vim.lsp.config("jdtls", {

@@ -1,0 +1,16 @@
+za       - open/close region
+zR       - open all regions
+zM       - close all regions
+alt+a    - buffer left
+alt+d    - buffer right
+alt+e    - move buffer left 
+alt+q    - move buffer right
+alt+t    - terminal
+alt+g    - termimal tab
+alt+x    - exit terminal mode (only in terminal mode)
+ctrl+w h - move to the window on the left
+ctrl+w j - move to the window below
+ctrl+w k - move to the window above
+ctrl+w l - move to the window on the right
+ctrl+w t - move to the TOP window
+ctrl+w b - move to the BOTTOM window
