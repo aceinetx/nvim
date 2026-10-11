@@ -1,3 +1,4 @@
+require("leader")
 require("scratch")
 require("config.lazy")
 require("colorscheme")
