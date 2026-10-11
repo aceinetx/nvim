@@ -14,3 +14,5 @@ ctrl+w k - move to the window above
 ctrl+w l - move to the window on the right
 ctrl+w t - move to the TOP window
 ctrl+w b - move to the BOTTOM window
+Q        - sets a cursor
+ctrl+l   - quit multicursors
