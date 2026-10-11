@@ -22,7 +22,6 @@ return {
 		init = function() vim.g.barbar_auto_setup = false end,
 		opts = {
 		},
-		version = '^1.0.0',
 	},
 	{
 		"aceinetx/hardtime.nvim",
@@ -96,6 +95,7 @@ return {
 		},
 		config = true,
 	},
+	--[[
 	{
 		"brenton-leighton/multiple-cursors.nvim",
 		version = "*",  -- Use the latest tagged version
@@ -121,4 +121,5 @@ return {
 			{"<Leader>l", "<Cmd>MultipleCursorsLock<CR>", mode = {"n", "x"}, desc = "Lock virtual cursors"},
 		},
 	}
+	]]--
 }
