@@ -9,7 +9,7 @@ return {
 			opts = {
 				open_mapping = [[<A-t>]],
 				direction = 'vertical',
-				size = vim.o.columns * 0.4,
+				size = vim.o.columns * 0.6,
 			}
 		}
 	},
