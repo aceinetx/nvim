@@ -48,6 +48,8 @@ vim.lsp.config("jdtls", {
 
 vim.lsp.enable("jdtls")
 
+vim.lsp.enable("teal_ls")
+
 vim.diagnostic.enable = true
 vim.diagnostic.config({
 	virtual_lines = true,
