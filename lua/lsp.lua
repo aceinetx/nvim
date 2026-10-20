@@ -64,3 +64,15 @@ end, {})
 vim.keymap.set('n', '<leader>rn', function()
 	vim.cmd("lua vim.lsp.buf.rename()")
 end, {})
+
+vim.api.nvim_create_user_command("LspDisableAll", function()
+	for _, config in ipairs(vim.lsp.get_configs()) do
+		vim.cmd("lsp disable " .. config["name"])
+	end
+end, {})
+
+vim.api.nvim_create_user_command("LspEnableAll", function()
+	for _, config in ipairs(vim.lsp.get_configs()) do
+		vim.cmd("lsp enable " .. config["name"])
+	end
+end, {})
