@@ -97,4 +97,7 @@ return {
 		},
 		config = true,
 	},
+	{
+		'nickel-lang/vim-nickel',
+	}
 }
